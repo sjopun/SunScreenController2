@@ -1,7 +1,7 @@
 // Sun screen controller
 ////////////////////////
 // file: SunScreenController2
-// date: 6-Jun-2014
+// date: 7-Jul-2014
 
 /*
 measure value
@@ -21,6 +21,9 @@ Structuur wijziging, metingen op interval, maar IRremote vaker checken.
 
 v0.5 (4-Jun-2014)
 Zon limit van 800 naar 850
+
+v0.6 (7-Jul-2014)
+Scherm omhoog waarde naar 700
 
 Todo:
 - IRremote in interrupt meenemen.
@@ -79,7 +82,7 @@ int       sensorValue            = 0;     // measured actual sensor value
 int       sensorValueAverage     = 0;     // averaged value after NUMBER_OF_READINGS
 
 const int SENSOR_SUN_YES         = 870;   // changed 800 -> 870 5-Jul-14/sjp
-const int SENSOR_SUN_NO          = 300;   // 80;
+const int SENSOR_SUN_NO          = 700;   // changed 300 -> 700;   // 80;
 const int SENSOR_SUN_EVENING     = 5;     // the reading below this value when no sensor is connected (not for a suncel)
 
 
@@ -104,7 +107,7 @@ void setup(void)
   Serial.begin(9600);
   
   Serial.println();
-  Serial.println( "SunScreenController v0.5 (5-Jul-2014)" );
+  Serial.println( "SunScreenController v0.6 (7-Jul-2014)" );
   Serial.println();
   
   SensorCalibrate();
